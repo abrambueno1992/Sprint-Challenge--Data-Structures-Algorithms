@@ -1,5 +1,69 @@
 const heapsort = (arr) => {
   /* Your code here */
+  // let lgt = arr.length;
+  // console.log(lgt)
+    // Build our max heap.
+    buildMaxHeap(arr);
+
+    // Find last element.
+    lastElement = arr.length - 1;
+  
+    // Continue heap sorting until we have
+    // just one element left in the arr.
+    while(lastElement > 0) {
+      swap(arr, 0, lastElement);
+  
+      heapify(arr, 0, lastElement);
+  
+      lastElement -= 1
+    }
+  function buildMaxHeap(arr) {
+    var i;
+    i = arr.length / 2 - 1;
+    i = Math.floor(i);
+  
+    // Build a max heap out of
+    // all arr elements passed in.
+    while (i >= 0) {
+      heapify(arr, i, arr.length);
+      i -= 1;
+    }
+  };
+
+function heapify(heap, i, max) {
+  var index, leftChild, righChild;
+  
+  while(i < max) {
+    index = i;
+
+    leftChild = 2*i + 1;
+    righChild = leftChild + 1;
+
+    if (leftChild < max && heap[leftChild] > heap[index]) {
+      index = leftChild;
+    }
+
+    if (righChild < max && heap[righChild] > heap[index]) {
+      index = righChild;
+    }
+      
+    if (index == i) {
+      return;
+    }
+
+    swap(heap,i, index);
+    
+    i = index;
+  }
+};
+function swap(arr, firstItemIndex, lastItemInde) {
+  var tmp = arr[firstItemIndex];
+  
+  // Swap first and last items in the arr.
+  arr[firstItemIndex] = arr[lastItemInde];
+  arr[lastItemInde] = tmp;
+}
+return arr
   
 };
 

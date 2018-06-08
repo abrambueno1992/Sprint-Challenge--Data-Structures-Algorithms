@@ -1,9 +1,9 @@
 Add your answers to the questions below.
 
 1. What is the runtime complexity of your `depthFirstForEach` method?
-
+O(N)
 2. What is the space complexity of your `depthFirstForEach` function?
-
+N
 3. What is the runtime complexity of your `breadthFirstForEach` method?
 
 4. What is the space complexity of your `breadthFirstForEach` method? 
